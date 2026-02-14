@@ -1,101 +1,159 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faloboula Agrobusiness - Agriculture Durable & Export</title>
-    <meta name="description" content="Faloboula Agrobusiness - Production agricole durable, transformation et export de produits agricoles de qualité.">
-    
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Faloboula Agrobusiness SUARL</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="header">
-    <div class="container">
-        <div class="logo">Faloboula Agrobusiness</div>
-        <nav class="nav">
-            <a href="#accueil">Accueil</a>
-            <a href="#apropos">À propos</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<!-- Loader -->
+<div id="loader" class="loader">
+    <div class="loader-logo">
+        <img src="favicon.svg" alt="Faloboula Logo" width="80">
     </div>
-</header>
+    <div class="loader-bar">
+        <div class="loader-bar-inner"></div>
+    </div>
+</div>
 
+<!-- Navigation -->
+<nav id="nav">
+    <a href="#" class="nav-logo">
+        <img src="favicon.svg" class="nav-logo-icon" alt="Logo">
+        <span class="nav-logo-text">FALOBOULA</span>
+    </a>
+
+    <div id="navLinks" class="nav-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+
+    <button id="hamburger" class="hamburger" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- Hero -->
 <section id="accueil" class="hero">
-    <div class="container">
-        <h1>Agriculture Durable & Export International</h1>
-        <p>Production, transformation et commercialisation de produits agricoles de qualité.</p>
-        <a href="#contact" class="btn">Nous contacter</a>
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="dot"></span> Agriculture & Export
+        </div>
+        <h1>
+            Agriculture Durable & <span class="gold">Export International</span>
+        </h1>
+        <p>
+            Production, transformation et commercialisation de produits agricoles de qualité.
+        </p>
+        <div class="hero-btns">
+            <a href="#contact" class="btn-primary">Nous contacter</a>
+            <a href="#apropos" class="btn-secondary">À propos</a>
+        </div>
     </div>
 </section>
 
-<section id="apropos" class="section">
+<!-- About -->
+<section id="apropos" class="about">
     <div class="container">
-        <h2>À propos</h2>
-        <p>
-            Faloboula Agrobusiness est une entreprise spécialisée dans la production agricole durable,
-            la transformation et l’exportation de produits agricoles de haute qualité.
+        <div class="section-label">À propos</div>
+        <h2 class="section-title">Faloboula Agrobusiness SUARL</h2>
+        <div class="gold-divider"></div>
+        <p class="section-desc">
+            Entreprise spécialisée dans la production, la transformation et l’exportation de produits agricoles.
         </p>
     </div>
 </section>
 
-<section id="services" class="section bg-light">
+<!-- Services -->
+<section id="services">
     <div class="container">
-        <h2>Nos Services</h2>
+        <div class="section-label">Nos Services</div>
+        <h2 class="section-title">Nos Activités</h2>
+        <div class="gold-divider"></div>
+
         <div class="services-grid">
             <div class="service-card">
+                <div class="service-icon"></div>
                 <h3>Production Agricole</h3>
-                <p>Culture et récolte de produits agricoles certifiés.</p>
+                <p>Culture et exploitation de produits agricoles destinés au marché local et international.</p>
             </div>
+
             <div class="service-card">
+                <div class="service-icon"></div>
                 <h3>Transformation</h3>
-                <p>Conditionnement et transformation respectant les normes internationales.</p>
+                <p>Transformation et conditionnement selon les standards internationaux de qualité.</p>
             </div>
+
             <div class="service-card">
-                <h3>Export</h3>
-                <p>Exportation vers les marchés internationaux avec logistique optimisée.</p>
+                <div class="service-icon"></div>
+                <h3>Exportation</h3>
+                <p>Exportation vers l’Europe et l’international avec respect des normes phytosanitaires.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="section">
+<!-- Contact -->
+<section id="contact">
     <div class="container">
-        <h2>Contact</h2>
-        <form name="contact" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Entrer en Contact</h2>
+        <div class="gold-divider"></div>
 
-            <div class="form-group">
-                <label>Nom</label>
-                <input type="text" name="nom" required>
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <h3 class="contact-info-title">Informations</h3>
+                <div class="contact-item">
+                    <div class="contact-icon"></div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>contact@faloboula.com</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="email" required>
-            </div>
+            <form id="contactForm" class="contact-form">
+                <h3>Envoyez un message</h3>
 
-            <div class="form-group">
-                <label>Message</label>
-                <textarea name="message" required></textarea>
-            </div>
+                <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" required>
+                </div>
 
-            <button type="submit" class="btn">Envoyer</button>
-        </form>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea required></textarea>
+                </div>
+
+                <button id="submitBtn" type="submit" class="btn-submit">
+                    Envoyer
+                </button>
+            </form>
+        </div>
     </div>
 </section>
 
-<footer class="footer">
-    <div class="container">
-        <p>© 2026 Faloboula Agrobusiness. Tous droits réservés.</p>
-        <a href="confidentialite.html">Politique de confidentialité</a>
-    </div>
-</footer>
+<!-- Back To Top -->
+<button id="backToTop" class="back-to-top">↑</button>
 
+<!-- Scripts -->
 <script src="main.js"></script>
 
 </body>
