@@ -386,8 +386,43 @@ section { padding: 120px 60px; position: relative; }
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 16px; margin-top: 60px;
 }
-.galerie-item { border-radius: 12px; overflow: hidden; position: relative; }
+.galerie-item { 
+  border-radius: 12px; overflow: hidden; position: relative; 
+  aspect-ratio: 16/10;
+  background: var(--dark); border: 1px solid rgba(255,255,255,0.04);
+  transition: all 0.4s ease;
+}
 .galerie-large { grid-column: span 2; }
+.galerie-item img { 
+  width: 100%; height: 100%; object-fit: cover; 
+  transition: transform 0.6s ease, opacity 0.4s ease;
+  display: block;
+  background: var(--dark2);
+}
+/* Fallback for missing images */
+.galerie-item img::before {
+  content: attr(alt);
+  display: flex; align-items: center; justify-content: center;
+  position: absolute; inset: 0;
+  background: var(--dark2);
+  color: var(--gray); font-size: 14px; text-align: center;
+  padding: 20px;
+}
+.galerie-item:hover { 
+  border-color: rgba(200,168,78,0.2); 
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.galerie-item:hover img { transform: scale(1.05); }
+.galerie-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.95), transparent);
+  padding: 32px 20px 16px;
+  color: var(--white); font-size: 14px; font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.galerie-item:hover .galerie-caption { opacity: 1; }
 .galerie-placeholder {
   background: var(--dark); border: 1px solid rgba(255,255,255,0.04);
   aspect-ratio: 16/10; display: flex; flex-direction: column;
@@ -397,7 +432,6 @@ section { padding: 120px 60px; position: relative; }
 .galerie-placeholder svg { width: 40px; height: 40px; color: rgba(200,168,78,0.3); }
 .galerie-placeholder span { font-size: 13px; color: var(--gray); letter-spacing: 1px; }
 .galerie-item:hover .galerie-placeholder { border-color: rgba(200,168,78,0.15); background: var(--dark2); }
-.galerie-item img { width: 100%; height: 100%; object-fit: cover; }
 
 /* === MARQUEE === */
 .products-marquee {
